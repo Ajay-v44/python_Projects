@@ -12,11 +12,13 @@ import pyttsx3
 
 if __name__ == '__main__':
     print("Welcome to RoboSpeaker 2.0")
-    speech = input("Enter what you want me to pronounce: ")
+    while True:
+        speech = input("Enter what you want me to pronounce: ")
+        if speech=='q':
+            break
+
+        engine = pyttsx3.init()
 
 
-    engine = pyttsx3.init()
-
-
-    engine.say(speech)
-    engine.runAndWait()
+        engine.say(speech)
+        engine.runAndWait()
