@@ -18,3 +18,5 @@ output=cv2.resize(src,(new_width,new_height))
 save_as=input("Enter the name along with extension you want to save the image \t")
 cv2.imwrite(save_as,output)
 cv2.waitKey(0)
+
+#The images should be present in the same directory where this program is present
