@@ -7,7 +7,12 @@ resp=requests.get(url)
 print(resp.text)
 wdic= json.loads(resp.text)
 temp=wdic["current"]["temp_c"]
+temp2=wdic["location"]["region"]
+temp3=wdic["location"]["localtime"]
 engine = pyttsx3.init()
+print(temp2)
 engine.say(f"the current weather at {city} is {temp} degrees")
+engine.say(f"the {city} is under {temp2} region")
+engine.say(f"the locan time at {city} is {temp3}")
 engine.runAndWait()
 
