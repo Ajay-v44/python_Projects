@@ -53,6 +53,10 @@ while True:
             lineType=2
             cv2.putText(frame,name+"present",bottomLeftCornerOfText,font,fontScale,thickness,lineType)
 
+            if name in students:
+                students.remove(name)
+                current_time=now.strftime("%H-%M%S")
+                lnwriter.writerow(name,current_time)
 
     cv2.imshow(("Attendance",frame))
     if cv2.waitKey(1) & 0xFF == ord("q"):
