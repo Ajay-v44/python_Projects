@@ -43,7 +43,20 @@ while True:
 
         if(matches[best_match_index]):
             name=known_face_name[best_match_index]
+        #add text if person is present
+        if name in known_face_name:
+            font=cv2.FONT_HERSHEY_SIMPLEX
+            bottomLeftCornerOfText=(10,100)
+            fontScale=1.5
+            fontColor=(255,0,0)
+            thickness=3
+            lineType=2
+            cv2.putText(frame,name+"present",bottomLeftCornerOfText,font,fontScale,thickness,lineType)
 
-        cv2.imshow(("Attendance",frame))
-        if cv2.waitKey(1) && 0xFF == ord("q"):
-            break
+
+    cv2.imshow(("Attendance",frame))
+    if cv2.waitKey(1) & 0xFF == ord("q"):
+        break
+video_capture.release()
+cv2.destroyAllWindows()
+f.close()
