@@ -15,3 +15,11 @@ known_face_encodings=[ram_encoding]
 known_face_name=["ram"]
 #list of expected students
 students=known_face_name.copy()
+
+face_location=[]
+face_encodings=[]
+
+#get the current date and time
+
+now=datetime.now()
+current_date=now.strftime('%Y-%m-%d')
