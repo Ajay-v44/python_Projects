@@ -40,3 +40,10 @@ while True:
         matches=face_recognitiion.compare_faces(known_face_encodings,face_encoding)
         face_distance=face_recognitiion.face_distance(known_face_encodings)
         best_match_index=np.argmin(face_distance)
+
+        if(matches[best_match_index]):
+            name=known_face_name[best_match_index]
+
+        cv2.imshow(("Attendance",frame))
+        if cv2.waitKey(1) && 0xFF == ord("q"):
+            break
